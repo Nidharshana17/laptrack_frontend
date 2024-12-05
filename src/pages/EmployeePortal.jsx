@@ -2,14 +2,21 @@ import React from 'react';
 import ViewLaptop from '../components/Employee/ViewLaptop';
 import RequestLaptop from '../components/Employee/RequestLaptop';
 import ReportIssue from '../components/Employee/ReportIssue';
+import './EmployeePortal.css'; // Import CSS specific to Employee Portal styling
 
 const EmployeePortal = () => {
     return (
-        <div className="container">
-            <h2 className="my-4">Employee Portal</h2>
-            <ViewLaptop />
-            <RequestLaptop />
-            <ReportIssue />
+        <div className="employee-portal-container">
+            <h2 className="portal-header">Employee Portal</h2>
+            <div className="employee-section">
+                <ViewLaptop />
+            </div>
+            <div className="employee-section">
+                <RequestLaptop />
+            </div>
+            <div className="employee-section">
+                <ReportIssue />
+            </div>
         </div>
     );
 };

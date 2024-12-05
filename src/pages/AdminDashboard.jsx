@@ -2,14 +2,21 @@ import React from 'react';
 import Dashboard from '../components/Admin/Dashboard';
 import ManageLaptops from '../components/Admin/ManageLaptops';
 import AssignLaptops from '../components/Admin/AssignLaptops';
+import './AdminDashboard.css'; // Import CSS for styling
 
 const AdminDashboard = () => {
     return (
-        <div className="container">
-            <h2 className="my-4">Admin Dashboard</h2>
-            <Dashboard />
-            <ManageLaptops />
-            <AssignLaptops />
+        <div className="admin-dashboard-container">
+            <h2 className="dashboard-header">Admin Dashboard</h2>
+            <div className="admin-section">
+                <Dashboard />
+            </div>
+            <div className="admin-section">
+                <ManageLaptops />
+            </div>
+            <div className="admin-section">
+                <AssignLaptops />
+            </div>
         </div>
     );
 };

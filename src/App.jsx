@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 import EmployeePortal from './pages/EmployeePortal';
-import NotFound from './pages/NotFound'; // Catch-all for 404 errors
-import './App.css'; // Import global styles
+import NotFound from './pages/NotFound';
+import './App.css'; // Import the global CSS for styling
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/employee" element={<EmployeePortal />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} /> {/* Fallback route for NotFound page */}
       </Routes>
     </Router>
   );

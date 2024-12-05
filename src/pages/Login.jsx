@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css'; // Import the CSS file for styling
+import '../App.css'; // Import the CSS for styling
 
 const Login = () => {
     const [role, setRole] = useState('');
@@ -16,19 +16,21 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h1 className="login-title">LAPTRACK</h1>
-            <select
-                className="form-select role-select"
-                onChange={(e) => setRole(e.target.value)}
-                defaultValue=""
-            >
-                <option value="" disabled>Select Role</option>
-                <option value="admin">Admin</option>
-                <option value="employee">Employee</option>
-            </select>
-            <button className="login-button" onClick={handleLogin}>
-                Login
-            </button>
+            <div className="login-card">
+                <h1 className="login-header">Laptop Management System</h1>
+                <select
+                    className="role-select"
+                    onChange={(e) => setRole(e.target.value)}
+                    defaultValue=""
+                >
+                    <option value="" disabled>Select Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="employee">Employee</option>
+                </select>
+                <button className="login-btn" onClick={handleLogin}>
+                    Login
+                </button>
+            </div>
         </div>
     );
 };

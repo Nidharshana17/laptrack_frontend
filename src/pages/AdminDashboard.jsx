@@ -5,6 +5,7 @@ import AssignLaptops from '../components/Admin/AssignLaptops';
 import '../App.css'; // Import CSS for styling
 
 const AdminDashboard = () => {
+    console.log('Rendering AdminDashboard'); // Log to ensure the component is rendering
     return (
         <div className="admin-dashboard-container">
             <h2 className="dashboard-header">Admin Dashboard</h2>

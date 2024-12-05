@@ -2,7 +2,7 @@ import React from 'react';
 import ViewLaptop from '../components/Employee/ViewLaptop';
 import RequestLaptop from '../components/Employee/RequestLaptop';
 import ReportIssue from '../components/Employee/ReportIssue';
-import './EmployeePortal.css'; // Import CSS specific to Employee Portal styling
+import './App.css'; // Import CSS specific to Employee Portal styling
 
 const EmployeePortal = () => {
     return (

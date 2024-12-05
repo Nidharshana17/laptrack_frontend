@@ -2,7 +2,7 @@ import React from 'react';
 import Dashboard from '../components/Admin/Dashboard';
 import ManageLaptops from '../components/Admin/ManageLaptops';
 import AssignLaptops from '../components/Admin/AssignLaptops';
-import './AdminDashboard.css'; // Import CSS for styling
+import './App.css'; // Import CSS for styling
 
 const AdminDashboard = () => {
     return (

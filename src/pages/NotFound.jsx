@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './App.css'; // Import CSS for styling
+import '../App.css'; // Import CSS for styling
 
 const NotFound = () => {
     return (

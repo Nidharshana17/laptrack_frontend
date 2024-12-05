@@ -16,7 +16,7 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h1 className="login-title">Laptop Management System</h1>
+            <h1 className="login-title">LAPTRACK</h1>
             <select
                 className="form-select role-select"
                 onChange={(e) => setRole(e.target.value)}

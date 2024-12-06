@@ -14,7 +14,7 @@ const ReportIssue = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/report-issue', issue);
+            const response = await axios.post('http://localhost:5000/api/report-issue', issue);
             setMessage('Issue reported successfully!');
             setErrorMessage('');
             setIssue({

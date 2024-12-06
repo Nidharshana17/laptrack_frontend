@@ -13,7 +13,7 @@ const RequestLaptop = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/request-laptop', request);
+            const response = await axios.post('http://localhost:5000/api/request-laptop', request);
             setMessage('Laptop request submitted successfully!');
             setErrorMessage('');
             setRequest({

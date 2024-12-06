@@ -17,7 +17,7 @@ const ManageLaptops = () => {
     useEffect(() => {
         const fetchLaptops = async () => {
             try {
-                const response = await axios.get('/api/laptops');
+                const response = await axios.get('http://localhost:5000/api/laptops');
                 setLaptops(response.data);
             } catch (error) {
                 setErrorMessage('Failed to fetch laptops.');
@@ -28,7 +28,7 @@ const ManageLaptops = () => {
 
     const handleAddLaptop = async () => {
         try {
-            const response = await axios.post('/api/laptops', newLaptop);
+            const response = await axios.post('http://localhost:5000/api/laptops', newLaptop);
             setLaptops([...laptops, response.data]);
             setNewLaptop({ brand: '', model: '', serialNumber: '', purchaseDate: '' });
             setMessage('Laptop added successfully!');
@@ -40,7 +40,7 @@ const ManageLaptops = () => {
 
     const handleDeleteLaptop = async (id) => {
         try {
-            await axios.delete(`/api/laptops/${id}`);
+            await axios.delete(`http://localhost:5000/api/laptops/${id}`);
             setLaptops(laptops.filter(laptop => laptop._id !== id));
             setMessage('Laptop deleted successfully!');
             setErrorMessage('');
@@ -56,7 +56,7 @@ const ManageLaptops = () => {
 
     const handleUpdateLaptop = async () => {
         try {
-            const response = await axios.put(`/api/laptops/${editLaptop._id}`, newLaptop);
+            const response = await axios.put(`http://localhost:5000/api/laptops/${editLaptop._id}`, newLaptop);
             setLaptops(laptops.map(laptop => laptop._id === editLaptop._id ? response.data : laptop));
             setEditLaptop(null);
             setMessage('Laptop updated successfully!');

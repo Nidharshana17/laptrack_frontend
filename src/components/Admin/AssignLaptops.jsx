@@ -15,8 +15,8 @@ const AssignLaptops = () => {
     useEffect(() => {
         const fetchEmployeesAndLaptops = async () => {
             try {
-                const employeeRes = await axios.get('/api/employees');  // Adjust the API endpoint
-                const laptopRes = await axios.get('/api/laptops?status=available'); // Get available laptops
+                const employeeRes = await axios.get('http://localhost:5000http://localhost:5000/api/employees');  // Adjust the API endpoint
+                const laptopRes = await axios.get('http://localhost:5000/api/laptops?status=available'); // Get available laptops
                 setEmployees(employeeRes.data);
                 setLaptops(laptopRes.data);
             } catch (error) {
@@ -35,7 +35,7 @@ const AssignLaptops = () => {
         }
 
         try {
-            const response = await axios.post('/api/assign-laptop', {
+            const response = await axios.post('http://localhost:5000/api/assign-laptop', {
                 employeeId: selectedEmployee,
                 laptopId: selectedLaptop,
             });

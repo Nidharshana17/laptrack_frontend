@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Table, Alert } from 'react-bootstrap';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const Reports = () => {
     const [reportData, setReportData] = useState({
         totalLaptops: 0,
@@ -14,7 +16,7 @@ const Reports = () => {
     useEffect(() => {
         const fetchReportData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/reports');  // Endpoint to fetch report data
+                const response = await axios.get(`${API_BASE_URL}/api/reports`);  // Endpoint to fetch report data
                 setReportData(response.data);
             } catch (error) {
                 setErrorMessage('Failed to fetch report data.');

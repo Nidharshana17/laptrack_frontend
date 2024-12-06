@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Alert, Card } from 'react-bootstrap';
 import axios from 'axios';
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const RequestLaptop = () => {
     const [request, setRequest] = useState({
         employeeId: '',
@@ -13,7 +13,7 @@ const RequestLaptop = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/request-laptop', request);
+            const response = await axios.post(`${API_BASE_URL}/api/request-laptop`, request);
             setMessage('Laptop request submitted successfully!');
             setErrorMessage('');
             setRequest({

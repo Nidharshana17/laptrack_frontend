@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Form, Card, InputGroup, FormControl, Alert } from 'react-bootstrap';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const AssignLaptops = () => {
     // State for employees, laptops, and assignment status
     const [employees, setEmployees] = useState([]);
@@ -15,8 +17,8 @@ const AssignLaptops = () => {
     useEffect(() => {
         const fetchEmployeesAndLaptops = async () => {
             try {
-                const employeeRes = await axios.get('http://localhost:5000http://localhost:5000/api/employees');  // Adjust the API endpoint
-                const laptopRes = await axios.get('http://localhost:5000/api/laptops?status=available'); // Get available laptops
+                const employeeRes = await axios.get(`${API_BASE_URL}/api/employees`);  // Adjust the API endpoint
+                // const laptopRes = await axios.get(`${API_BASE_URL}/api/laptops?status=available`); // Get available laptops
                 setEmployees(employeeRes.data);
                 setLaptops(laptopRes.data);
             } catch (error) {
@@ -35,7 +37,7 @@ const AssignLaptops = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/api/assign-laptop', {
+            const response = await axios.post(`${API_BASE_URL}/api/assign-laptop`, {
                 employeeId: selectedEmployee,
                 laptopId: selectedLaptop,
             });

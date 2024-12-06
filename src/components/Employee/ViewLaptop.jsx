@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Card, ListGroup, Button, Alert } from 'react-bootstrap';
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const ViewLaptop = () => {
     const [laptopDetails, setLaptopDetails] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
@@ -11,7 +13,7 @@ const ViewLaptop = () => {
     useEffect(() => {
         const fetchLaptopDetails = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/laptop-details'); // Adjust the route as per your backend
+                const response = await axios.get(`${API_BASE_URL}/api/laptop-details`); // Adjust the route as per your backend
                 setLaptopDetails(response.data);
                 setLoading(false);
             } catch (error) {

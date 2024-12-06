@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, Alert, Card } from 'react-bootstrap';
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const ReportIssue = () => {
     const [issue, setIssue] = useState({
         laptopId: '',
@@ -14,7 +15,7 @@ const ReportIssue = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/report-issue', issue);
+            const response = await axios.post(`${API_BASE_URL}/api/report-issue`, issue);
             setMessage('Issue reported successfully!');
             setErrorMessage('');
             setIssue({
